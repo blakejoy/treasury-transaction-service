@@ -1,0 +1,21 @@
+server:
+  servlet:
+    context-path: "/api"
+spring:
+  application:
+    name: transactions-service
+  profiles:
+    default: dev
+    group:
+      qa: postgres
+      staging: postgres
+      prod: postgres
+  jpa:
+    open-in-view: false
+
+treasury:
+  base-url: https://api.fiscaldata.treasury.gov/services/api/fiscal_service
+  rates-path: /v1/accounting/od/rates_of_exchange
+  max-lookback-months: 6
+  connect-timeout: 2s
+  read-timeout: 5s
